@@ -1,0 +1,104 @@
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  background-color: #fff;
+  line-height: 1;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+li {
+  list-style: none;
+}
+
+@media screen and (max-width: 480px) {
+  .n-article {
+    margin: 12% 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .n-article-wrap {
+    width: 90%;
+  }
+}
+.n-article-wrap__block {
+  margin: 5% 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 480px) {
+  .n-article-wrap__block {
+    margin: 7.5% 0;
+  }
+}
+.n-article-wrap__block__link {
+  display: flex;
+  justify-content: space-between;
+}
+.n-article-wrap__block__link__txt {
+  padding: 4%;
+  background-color: #d5f2ee;
+}
+.n-article-wrap__block__link__txt__date p {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+}
+.n-article-wrap__block__link__txt__ttl {
+  margin-top: 2%;
+}
+.n-article-wrap__block__link__txt__ttl h3 {
+  font-size: clamp(0.75rem, 0.536rem + 1.07vw, 1.5rem);
+}
+.n-article-wrap__block__link__txt__para {
+  margin-top: 4%;
+}
+.n-article-wrap__block__link__txt__para p {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  line-height: 1.6;
+}
+.n-article-wrap__btn {
+  margin-top: 7.5%;
+}
+@media screen and (max-width: 480px) {
+  .n-article-wrap__btn {
+    margin-top: 10%;
+  }
+}
+.n-article-wrap__btn__list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 5%;
+}
+.n-article-wrap__btn__list__item__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(0.75rem, 0.607rem + 0.71vw, 1.25rem);
+  width: 2.5em;
+  height: 2.5em;
+}
+.n-article-wrap__btn__list__item__link.__now {
+  cursor: default;
+  pointer-events: none;
+  background-color: #28b19c;
+  color: #fff;
+}
+.n-article-wrap__btn__list__item__link.__next {
+  white-space: nowrap;
+}

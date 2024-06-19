@@ -1,0 +1,211 @@
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  background-color: #fff;
+  line-height: 1;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+li {
+  list-style: none;
+}
+
+.s-top-wrap__img {
+  width: 100%;
+  height: 60dvh;
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+  z-index: 0;
+}
+.s-top-wrap__img.__service {
+  background-image: url("../img/service-fv.jpeg");
+}
+.s-top-wrap__img.__company {
+  background-image: url("../img/company-fv.jpeg");
+}
+.s-top-wrap__img.__blog {
+  background-image: url("../img/blog-fv.jpeg");
+}
+.s-top-wrap__img.__news {
+  background-image: url("../img/news-fv.jpeg");
+}
+.s-top-wrap__img.__contact {
+  background-image: url("../img/contact-fv.jpeg");
+}
+.s-top-wrap__img::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+.s-top-wrap__img__ttl {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  z-index: 2;
+}
+@media screen and (max-width: 768px) {
+  .s-top-wrap__img__ttl {
+    bottom: 7.5%;
+  }
+}
+.s-top-wrap__img__ttl h1 {
+  font-size: clamp(1.25rem, 0.75rem + 2.5vw, 3rem);
+  color: #fff;
+  line-height: 1.4;
+}
+.s-top-wrap__img__ttl h1 span {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+}
+
+.breadcrumb-wrap__nav__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.breadcrumb-wrap__nav__list__item a {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+}
+.breadcrumb-wrap__nav__list__item:not(:last-of-type):after {
+  content: ">";
+  margin: 0 10px;
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  color: #000;
+}
+@media screen and (max-width: 768px) {
+  .breadcrumb-wrap__nav__list__item:not(:last-of-type):after {
+    margin: 0 7.5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .breadcrumb-wrap__nav__list__item:not(:last-of-type):after {
+    margin: 0 3.5px;
+  }
+}
+
+.u-summary-wrap__ttl p {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  font-weight: 500;
+  line-height: 1.6;
+}
+.u-summary-wrap__ttl p.__contact {
+  font-weight: 700;
+}
+
+.b-content {
+  margin-top: 7.5%;
+}
+@media screen and (max-width: 480px) {
+  .b-content {
+    margin-top: 15%;
+  }
+}
+.b-content-wrap__date {
+  margin-bottom: 2.5%;
+}
+.b-content-wrap__date p {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+}
+.b-content-wrap__ttl {
+  margin-bottom: 5%;
+}
+.b-content-wrap__ttl h2 {
+  font-size: clamp(0.875rem, 0.696rem + 0.89vw, 1.5rem);
+}
+.b-content-wrap__img {
+  width: 100%;
+  aspect-ratio: 2/1;
+  margin-bottom: 5%;
+}
+.b-content-wrap__img img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+.b-content-wrap__txt p {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  line-height: 1.6;
+}
+
+.b-page {
+  box-sizing: border-box;
+  margin: 5% 0 7.5%;
+}
+@media screen and (max-width: 768px) {
+  .b-page {
+    margin: 7.5% 0 10%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .b-page {
+    margin: 7.5% 0 15%;
+  }
+}
+.b-page-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.b-page-wrap__block {
+  width: 20%;
+}
+@media screen and (max-width: 768px) {
+  .b-page-wrap__block {
+    width: 30%;
+  }
+}
+.b-page-wrap__block__anker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5%;
+}
+.b-page-wrap__block__anker.__second {
+  justify-content: flex-start;
+}
+.b-page-wrap__block__anker__txt {
+  font-size: clamp(0.875rem, 0.696rem + 0.89vw, 1.5rem);
+}
+.b-page-wrap__block__anker__icon svg {
+  width: 24px;
+  height: 12px;
+}
+@media screen and (max-width: 480px) {
+  .b-page-wrap__block__anker__icon svg {
+    width: 16px;
+    height: 8px;
+  }
+}
+.b-page-wrap__block__anker__icon.__rev {
+  transform: rotate(180deg);
+}
+.b-page-wrap__block__center {
+  text-align: center;
+}
+.b-page-wrap__block__center__txt {
+  font-size: clamp(0.875rem, 0.696rem + 0.89vw, 1.5rem);
+}

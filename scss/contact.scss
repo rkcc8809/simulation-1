@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.c-con {
+  &-wrap {
+    & hr {
+      width: 77vw;
+      margin-left: -5%;
+      border-top: 1px solid g.$cGray;
+      @include g.mq(tab) {
+        width: 90vw;
+        margin-left: 0;
+      }
+    }
+    &__form {
+      margin: 10% 0;
+      @include g.mq(sp) {
+        margin: 15% 0;
+      }
+      &__block {
+        margin: 5% 0;
+        @include g.mq(tab) {
+          margin: 7.5% 0;
+        }
+        @include g.mq(sp) {
+          margin: 10% 0;
+        }
+        &__ttl {
+          & p {
+            font-size: g.$font-12-16;
+          }
+        }
+        &__input {
+          margin: 2.5% 0;
+          &.__radio {
+            display: flex;
+            @include g.mq(pc) {
+              flex-wrap: wrap;
+            }
+          }
+          &__one {
+            // width: 25%;
+            margin-right: 2%;
+            white-space: nowrap;
+            @include g.mq(pc) {
+              width: 40%;
+              margin: 1% 0;
+            }
+            @include g.mq(tab) {
+              width: 45%;
+              margin: 2% 0;
+            }
+            @include g.mq(sp) {
+              width: 53%;
+            }
+            & input {
+              vertical-align: text-bottom;
+              @include g.font-serif;
+              appearance: none;
+              background-color: g.$cGray-light;
+              width: 20px; /* 任意の幅 */
+              height: 20px; /* 任意の高さ */
+              border-radius: 50%; /* 円形にする */
+              cursor: pointer; /* マウスオーバー時のカーソル */
+              position: relative;
+              @include g.mq(tab) {
+                width: 10px;
+                height: 10px;
+                vertical-align: baseline;
+              }
+              &:checked::before {
+                content: "";
+                display: block;
+                width: 12px; /* 内側の丸の幅 */
+                height: 12px; /* 内側の丸の高さ */
+                background-color: g.$cBrand; /* 内側の丸の色 */
+                border-radius: 50%; /* 内側の丸を円形にする */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                @include g.mq(tab) {
+                  width: 6px;
+                  height: 6px;
+                }
+              }
+            }
+            & label {
+              font-size: g.$font-10-16;
+              letter-spacing: 1px;
+              padding-left: 2.5%;
+            }
+          }
+          &__two {
+            & input {
+              box-sizing: border-box;
+              display: block;
+              width: 100%;
+              font-size: g.$font-10-16;
+              padding: 2% 4%;
+              @include g.font-serif;
+              letter-spacing: 1px;
+              border: none;
+              background-color: g.$cGray-light;
+            }
+            &__textarea {
+              display: block;
+              width: 100%;
+              box-sizing: border-box;
+              font-size: g.$font-10-16;
+              padding: 2% 4%;
+              @include g.font-serif;
+              letter-spacing: 1px;
+              border: none;
+              background-color: g.$cGray-light;
+              height: 17.5rem;
+            }
+          }
+        }
+      }
+      &__btn {
+        margin: 7.5% auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.contact-btn {
+  cursor: pointer;
+  border: 1px solid g.$cBrand;
+  background-color: g.$cBrand;
+  color: g.$cWhite;
+  font-size: g.$font-12-16;
+  padding: 2% 10%;
+  transition: all 0.3s;
+  @include g.mq(sp) {
+    padding: 3.5% 14%;
+  }
+  &:hover {
+    color: g.$cBrand;
+    background-color: g.$cWhite;
+  }
+}

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.b-article {
+  @include g.mq(tab) {
+    margin: 10.5% 0;
+  }
+  @include g.mq(sp) {
+    margin: 12.5% 0;
+  }
+
+  &-wrap {
+    &__block {
+      margin: 5% 0;
+      @include g.mq(sp) {
+        width: 80%;
+        margin: 0 auto;
+      }
+      &__link {
+        display: flex;
+        justify-content: space-between;
+        @include g.mq(sp) {
+          display: block;
+        }
+
+        &__img {
+          width: 50%;
+          aspect-ratio: 16 / 9;
+          @include g.mq(tab) {
+            width: 40%;
+          }
+          @include g.mq(sp) {
+            width: 100%;
+          }
+
+          & img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+          }
+        }
+        &__txt {
+          width: 45%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          @include g.mq(tab) {
+            width: 55%;
+          }
+          @include g.mq(sp) {
+            width: 100%;
+            margin: 2.5% 0 15%;
+          }
+          &__date {
+            & p {
+              font-size: g.$font-10-16;
+            }
+            & h3 {
+              font-size: g.$font-12-24;
+              line-height: 2.5;
+            }
+          }
+
+          &__para {
+            & p {
+              font-size: g.$font-10-16;
+              line-height: 1.6;
+            }
+          }
+        }
+      }
+    }
+    &__btn {
+      margin-top: 7.5%;
+
+      &__list {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        gap: 5%;
+        &__item {
+          &__link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: g.$font-12-20;
+            width: 2.5em;
+            height: 2.5em;
+            &.__now {
+              cursor: default;
+              pointer-events: none;
+              background-color: g.$cBrand;
+              color: g.$cWhite;
+            }
+            &.__next {
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}

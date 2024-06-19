@@ -1,0 +1,576 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+// common-main
+@include g.mq(pc_L) {
+  .__pc {
+    display: none;
+  }
+  .__tab {
+    display: none;
+  }
+  .__sp {
+    display: none;
+  }
+}
+
+@include g.mq(pc) {
+  .__pc {
+    display: inline-block;
+  }
+  .__tab {
+    display: none;
+  }
+  .__sp {
+    display: none;
+  }
+}
+
+@include g.mq(tab) {
+  .__pc {
+    display: none;
+  }
+  .__tab {
+    display: inline-block;
+  }
+  .__sp {
+    display: none;
+  }
+}
+
+@include g.mq(sp) {
+  .__pc {
+    display: none;
+  }
+  .__tab {
+    display: none;
+  }
+  .__sp {
+    display: inline-block;
+  }
+}
+
+.__inner {
+  width: 80%;
+  margin: 0 auto;
+  @include g.mq(pc) {
+    width: 90%;
+  }
+}
+
+.__inner__blog {
+  width: 70%;
+  margin: 0 auto;
+  @include g.mq(tab) {
+    width: 90%;
+  }
+}
+
+.__inner__news {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.__inner__blog-each {
+  width: 55%;
+  margin: 0 auto;
+  @include g.mq(tab) {
+    width: 75%;
+  }
+}
+
+.__section1 {
+  margin: 7.5% 0;
+}
+
+.__section2 {
+  margin: 3.5% 0;
+  @include g.mq(tab) {
+    margin: 5% 0;
+  }
+}
+
+.__section__bread {
+  margin: 2.5% 0;
+}
+
+.btn {
+  color: g.$cWhite;
+  background-color: g.$cBrand;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 10px 11px;
+  @include g.mq(pc) {
+    padding: 8px 9px;
+  }
+  @include g.mq(tab) {
+    padding: 6px 7px;
+  }
+  & svg {
+    width: 25px;
+    height: 25px;
+    transform: rotate(90deg);
+    @include g.mq(pc) {
+      width: 20px;
+      height: 20px;
+    }
+    @include g.mq(tab) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.b-btn {
+  background-color: g.$cBlack;
+}
+
+.f-btn {
+  background-color: g.$cWhite;
+  color: g.$cBrand;
+  & svg {
+    width: 25px;
+    height: 25px;
+    transform: rotate(0deg);
+  }
+}
+
+// header
+.header {
+  &-wrap {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: g.$cBrand;
+    z-index: 100;
+    height: 100px;
+    box-shadow: 4px 4px 4px g.$cBlack-clear;
+    @include g.mq(tab) {
+      height: 80px;
+    }
+
+    &__logo {
+      font-size: 1.25rem;
+      padding-left: 2.5%;
+      @include g.mq(tab) {
+        padding-left: 3.5%;
+      }
+      @include g.mq(sp) {
+        // padding-left: 6.5%;
+        // width: 170px;
+      }
+
+      & a {
+        color: g.$cWhite;
+        @include g.font-kaisei;
+      }
+    }
+
+    &__nav {
+      width: 55%;
+      margin-right: 1%;
+      // padding-right: 5%;
+      @include g.mq(pc) {
+        width: 65%;
+        // padding-right: 2.5%;
+      }
+      @include g.mq(tab) {
+        display: none;
+      }
+
+      &__list {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 6%;
+        margin-right: 10%;
+
+        &__item {
+          & a {
+            font-size: 1rem;
+            font-weight: 700;
+            display: block;
+            color: g.$cWhite;
+            @include g.mq(pc) {
+              font-size: 0.875rem;
+            }
+          }
+
+          &__contact {
+            & a {
+              background-color: g.$cWhite;
+              color: g.$cBrand;
+              display: flex;
+              flex-direction: column;
+              font-size: 1rem;
+              gap: 5px;
+              width: 100%;
+              padding: 7.5% 25%;
+              margin-right: 2.5%;
+              @include g.mq(pc) {
+                font-size: 0.875rem;
+              }
+              &:hover {
+                opacity: 1;
+                background-color: g.$cYellow;
+                color: g.$cWhite;
+              }
+              & span {
+                text-align: center;
+                & svg {
+                  width: 1.5em;
+                  height: 1.5em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.h-open {
+  display: none;
+  position: absolute;
+  z-index: 9999;
+  right: 3.5%;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  background-color: g.$cWhite;
+
+  & span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 10px;
+    height: 2.5px;
+    border-radius: 2px;
+    background-color: g.$cBrand;
+
+    &:nth-of-type(1) {
+      top: 16px;
+      width: 55%;
+    }
+
+    &:nth-of-type(2) {
+      top: 30px;
+      width: 25%;
+    }
+  }
+
+  &.active span:nth-of-type(1) {
+    top: 16px;
+    left: 11px;
+    transform: translateY(6px) rotate(45deg);
+    width: 50%;
+  }
+
+  &.active span:nth-of-type(2) {
+    top: 28px;
+    left: 11px;
+    transform: translateY(-6px) rotate(-45deg);
+    width: 50%;
+  }
+  @include g.mq(tab) {
+    display: block;
+  }
+}
+
+#h-nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 50%;
+  height: 100vh;
+  background-color: g.$cBrand;
+  transition: all 0.6s;
+  @include g.mq(sp) {
+    width: 100%;
+  }
+
+  &__list__first {
+    position: absolute;
+    z-index: 999;
+    top: 3%;
+    left: 5%;
+    & li {
+      margin: 10% 15%;
+      width: 100%;
+
+      & a {
+        color: g.$cWhite;
+        font-size: 20px;
+        display: block;
+        @include g.mq(sp) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &__list__second {
+    position: absolute;
+    z-index: 999;
+    top: 12.5%;
+    left: 17.5%;
+    // transform: translateY(-50%) translateX(-50%);
+
+    & li {
+      margin: 50% 0;
+      & a {
+        display: block;
+        font-size: 20px;
+        color: g.$cWhite;
+        position: relative;
+        @include g.mq(sp) {
+          font-size: 16px;
+        }
+        &:before {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 1em;
+          background-color: g.$cWhite;
+          left: -20px;
+        }
+      }
+    }
+  }
+  &__list__third {
+    position: absolute;
+    z-index: 999;
+    top: 45%;
+    left: 12%;
+    @include g.mq(sp) {
+      top: 50%;
+    }
+
+    & li {
+      & a {
+        background-color: g.$cWhite;
+        color: g.$cBrand;
+        display: flex;
+        flex-direction: column;
+        font-size: 1rem;
+        gap: 5px;
+        width: 100%;
+        padding: 7.5% 25%;
+        margin-right: 2.5%;
+        @include g.mq(pc) {
+          font-size: 0.875rem;
+        }
+        &:hover {
+          opacity: 1;
+          background-color: g.$cYellow;
+          color: g.$cWhite;
+        }
+        & span {
+          text-align: center;
+          & svg {
+            width: 1.5em;
+            height: 1.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+#h-nav.panelactive {
+  right: 0;
+}
+
+.s-ttl {
+  font-size: g.$font-20-48;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: g.$cBlack;
+    bottom: 40%;
+    left: 120%;
+    @include g.mq(tab) {
+      width: 30px;
+      left: 110%;
+    }
+  }
+  &.__second {
+    display: inline-block;
+    &::after {
+      left: 110%;
+    }
+  }
+}
+
+.footer {
+  background-color: g.$cBrand;
+  padding: 5% 0 2.5%;
+  @include g.mq(tab) {
+    padding: 7.5% 0 3.75%;
+  }
+  @include g.mq(sp) {
+    padding: 10% 0 5%;
+  }
+  &-wrap {
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      &__logo {
+        & a {
+          color: g.$cWhite;
+          font-size: g.$font-16-24;
+          @include g.font-kaisei;
+        }
+      }
+      &__contact {
+        & a {
+          color: g.$cBrand;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+          width: 18vw;
+          padding: 5% 18%;
+          box-sizing: border-box;
+          background-color: g.$cWhite;
+          white-space: nowrap;
+          @include g.mq(pc) {
+            width: 20vw;
+          }
+          @include g.mq(tab) {
+            width: 25vw;
+          }
+          @include g.mq(sp) {
+            width: 30vw;
+          }
+          &:hover {
+            opacity: 1;
+            color: g.$cWhite;
+            background-color: g.$cYellow;
+          }
+          & span {
+            & svg {
+              width: 2em;
+              height: 2em;
+              @include g.mq(tab) {
+                width: 1.5em;
+                height: 1.5em;
+              }
+              @include g.mq(sp) {
+                width: 1em;
+                height: 1em;
+              }
+            }
+          }
+          & p {
+            font-size: g.$font-12-24;
+          }
+        }
+      }
+    }
+    &__bottom {
+      display: flex;
+      margin: -2.5% 0 0;
+      @include g.mq(tab) {
+        margin: 5% 0 0;
+      }
+      @include g.mq(sp) {
+        flex-wrap: wrap;
+      }
+      &__list {
+        width: 22.5%;
+        @include g.mq(pc) {
+          width: 25%;
+        }
+        @include g.mq(tab) {
+          width: 35.5%;
+        }
+        @include g.mq(sp) {
+          width: 60%;
+        }
+        &.__second {
+          width: 20%;
+          @include g.mq(tab) {
+            width: 25%;
+          }
+          @include g.mq(sp) {
+            width: 27%;
+          }
+        }
+        &.__third {
+          width: 15%;
+          @include g.mq(tab) {
+            width: 20%;
+          }
+          @include g.mq(sp) {
+            width: 30%;
+          }
+        }
+        &.__fourth {
+          width: 15%;
+          @include g.mq(sp) {
+            width: 30%;
+          }
+        }
+        & a {
+          color: g.$cWhite;
+        }
+        &__item {
+          margin-bottom: 20%;
+          & a {
+            font-size: g.$font-12-24;
+          }
+          &__sub {
+            &__item {
+              margin: 5% 0 0;
+              &:nth-of-type(1) {
+                margin-top: 10%;
+              }
+              & a {
+                font-size: g.$font-10-14;
+                &::before {
+                  content: ">";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    &__btn {
+      &__txt {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        cursor: pointer;
+        gap: 2%;
+        margin-top: -10%;
+        & p {
+          font-size: g.$font-11-16;
+          color: g.$cWhite;
+          margin-bottom: 0.5%;
+        }
+      }
+    }
+    &__copyright {
+      text-align: center;
+      margin-top: 10%;
+      & small {
+        color: g.$cWhite;
+        font-size: g.$font-10-12;
+      }
+    }
+  }
+}

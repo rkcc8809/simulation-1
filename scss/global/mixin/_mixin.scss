@@ -1,0 +1,16 @@
+@use "../setting/" as *;
+
+@mixin font-serif {
+  font-family: $font-normal;
+  font-weight: 700;
+}
+
+@mixin font-kaisei {
+  font-family: $font-title;
+  font-weight: 700;
+}
+
+@mixin font-zen {
+  font-family: $font-greet;
+  font-weight: 400;
+}

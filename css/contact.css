@@ -1,0 +1,188 @@
+@charset "UTF-8";
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  background-color: #fff;
+  line-height: 1;
+  letter-spacing: 1px;
+  word-break: break-all;
+  color: #000;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+li {
+  list-style: none;
+}
+
+.c-con-wrap hr {
+  width: 77vw;
+  margin-left: -5%;
+  border-top: 1px solid #555;
+}
+@media screen and (max-width: 768px) {
+  .c-con-wrap hr {
+    width: 90vw;
+    margin-left: 0;
+  }
+}
+.c-con-wrap__form {
+  margin: 10% 0;
+}
+@media screen and (max-width: 480px) {
+  .c-con-wrap__form {
+    margin: 15% 0;
+  }
+}
+.c-con-wrap__form__block {
+  margin: 5% 0;
+}
+@media screen and (max-width: 768px) {
+  .c-con-wrap__form__block {
+    margin: 7.5% 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .c-con-wrap__form__block {
+    margin: 10% 0;
+  }
+}
+.c-con-wrap__form__block__ttl p {
+  font-size: clamp(0.75rem, 0.679rem + 0.36vw, 1rem);
+}
+.c-con-wrap__form__block__input {
+  margin: 2.5% 0;
+}
+.c-con-wrap__form__block__input.__radio {
+  display: flex;
+}
+@media screen and (max-width: 1024px) {
+  .c-con-wrap__form__block__input.__radio {
+    flex-wrap: wrap;
+  }
+}
+.c-con-wrap__form__block__input__one {
+  margin-right: 2%;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1024px) {
+  .c-con-wrap__form__block__input__one {
+    width: 40%;
+    margin: 1% 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .c-con-wrap__form__block__input__one {
+    width: 45%;
+    margin: 2% 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .c-con-wrap__form__block__input__one {
+    width: 53%;
+  }
+}
+.c-con-wrap__form__block__input__one input {
+  vertical-align: text-bottom;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  appearance: none;
+  background-color: #eee;
+  width: 20px; /* 任意の幅 */
+  height: 20px; /* 任意の高さ */
+  border-radius: 50%; /* 円形にする */
+  cursor: pointer; /* マウスオーバー時のカーソル */
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .c-con-wrap__form__block__input__one input {
+    width: 10px;
+    height: 10px;
+    vertical-align: baseline;
+  }
+}
+.c-con-wrap__form__block__input__one input:checked::before {
+  content: "";
+  display: block;
+  width: 12px; /* 内側の丸の幅 */
+  height: 12px; /* 内側の丸の高さ */
+  background-color: #28b19c; /* 内側の丸の色 */
+  border-radius: 50%; /* 内側の丸を円形にする */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 768px) {
+  .c-con-wrap__form__block__input__one input:checked::before {
+    width: 6px;
+    height: 6px;
+  }
+}
+.c-con-wrap__form__block__input__one label {
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  letter-spacing: 1px;
+  padding-left: 2.5%;
+}
+.c-con-wrap__form__block__input__two input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  padding: 2% 4%;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  background-color: #eee;
+}
+.c-con-wrap__form__block__input__two__textarea {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
+  padding: 2% 4%;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  background-color: #eee;
+  height: 17.5rem;
+}
+.c-con-wrap__form__btn {
+  margin: 7.5% auto;
+  text-align: center;
+}
+
+.contact-btn {
+  cursor: pointer;
+  border: 1px solid #28b19c;
+  background-color: #28b19c;
+  color: #fff;
+  font-size: clamp(0.75rem, 0.679rem + 0.36vw, 1rem);
+  padding: 2% 10%;
+  transition: all 0.3s;
+}
+@media screen and (max-width: 480px) {
+  .contact-btn {
+    padding: 3.5% 14%;
+  }
+}
+.contact-btn:hover {
+  color: #28b19c;
+  background-color: #fff;
+}

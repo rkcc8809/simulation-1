@@ -1,0 +1,249 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.c-philo {
+  background-color: g.$cBrand-2;
+  &-wrap {
+    padding: 3.5% 0;
+    @include g.mq(pc) {
+      padding: 5% 0;
+    }
+    @include g.mq(sp) {
+      padding: 7.5% 0;
+    }
+    &__top {
+      background-color: g.$cWhite;
+      display: inline-block;
+      box-sizing: border-box;
+      padding: 2% 8.5% 2% 5%;
+      clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+      @include g.mq(tab) {
+        padding: 3% 9.5% 3% 6%;
+      }
+      & h2 {
+        font-size: g.$font-20-40;
+      }
+    }
+    &__middle {
+      position: relative;
+      margin: 3.5% 0;
+      @include g.mq(pc) {
+        margin: 5% 0;
+      }
+      @include g.mq(sp) {
+        margin: 7.5% 0;
+      }
+      &__left {
+        width: 60%;
+        clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
+        aspect-ratio: 16 / 9;
+        & img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+      &__right {
+        width: 60%;
+        position: absolute;
+        aspect-ratio: 16 / 9;
+        top: 0;
+        right: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%);
+        & img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+    &__bottom {
+      display: flex;
+      &__clip {
+        background-color: g.$cWhite;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 2% 2% 2% 9.5%;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+        margin-left: auto;
+        @include g.mq(tab) {
+          padding: 3% 3% 3% 10.5%;
+        }
+
+        & p {
+          font-size: g.$font-10-16;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+.c-intro {
+  &-wrap {
+    background-color: g.$cWhite;
+    margin: 5% 0;
+    @include g.mq(tab) {
+      margin: 7.5% 0;
+    }
+    &__block {
+      margin: 2.5% 0;
+      @include g.mq(tab) {
+        margin: 5% 0;
+      }
+      @include g.mq(sp) {
+        margin: 10% 0;
+      }
+      &.__second {
+        @include g.mq(sp) {
+          margin: 10% 0 15%;
+        }
+      }
+      &__ttl {
+        text-align: center;
+
+        & h2 {
+          display: inline-block;
+          font-size: g.$font-20-40;
+          line-height: 2.5;
+          position: relative;
+          // border-bottom: 10px solid g.$cBrand;
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -16px;
+            width: 100%;
+            height: 10px;
+            background-color: g.$cBrand;
+          }
+        }
+        &.__second {
+          & h2 {
+            &::after {
+              background-color: g.$cGray-3;
+            }
+          }
+        }
+      }
+      & hr {
+        border-top: 1px solid g.$cBrand;
+      }
+      &.__second {
+        & hr {
+          border-top: 1px solid g.$cGray;
+        }
+      }
+      &__con {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 5% auto;
+        @include g.mq(tab) {
+          margin: 7.5% auto;
+        }
+        @include g.mq(sp) {
+          display: block;
+        }
+        &.__second {
+          align-items: flex-start;
+        }
+        &__left {
+          width: 45%;
+          display: flex;
+          order: -1;
+          flex-direction: column;
+          gap: 20px;
+          @include g.mq(sp) {
+            width: 100%;
+            margin-top: 5%;
+          }
+          &__mes {
+            & p {
+              font-size: g.$font-10-16;
+              line-height: 1.6;
+            }
+          }
+          &__name {
+            & p {
+              font-size: g.$font-16-24;
+              @include g.font-zen;
+              text-align: right;
+            }
+          }
+          &__img {
+            width: 100%;
+            & img {
+              width: 100%;
+              display: block;
+              object-fit: cover;
+            }
+          }
+          &.__second {
+            width: 40%;
+            @include g.mq(sp) {
+              width: 100%;
+            }
+          }
+        }
+        &__right {
+          width: 50%;
+          @include g.mq(sp) {
+            width: 100%;
+          }
+          &__img {
+            width: 100%;
+            @include g.mq(tab) {
+              aspect-ratio: 4 / 3;
+            }
+            & img {
+              width: 100%;
+              height: 100%;
+              display: block;
+              object-fit: cover;
+            }
+          }
+          &__list {
+            width: 100%;
+            @include g.mq(sp) {
+              margin: 7.5% 0;
+            }
+            &__item {
+              display: flex;
+              margin: 1.5em 0;
+              &:nth-of-type(1) {
+                margin-top: 0;
+              }
+              @include g.mq(tab) {
+                margin: 0.5em 0;
+              }
+              &__ttl {
+                width: 30%;
+                font-size: g.$font-11-16;
+              }
+              &__con {
+                font-size: g.$font-11-16;
+                & span {
+                  display: block;
+                  margin-bottom: 1em;
+                }
+              }
+            }
+          }
+          &.__second {
+            width: 52.5%;
+            @include g.mq(tab) {
+              width: 56.5%;
+            }
+            @include g.mq(sp) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

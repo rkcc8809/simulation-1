@@ -1,0 +1,389 @@
+@charset "UTF-8";
+
+@use "foundation";
+
+@use "global" as g;
+
+.top {
+  &-wrap {
+    width: 100%;
+    height: 100dvh;
+    background-color: g.$cWhite;
+    &__inner {
+      width: 100%;
+      height: 97.5dvh;
+      background-image: url("../img/top-fv.jpg");
+      background-size: cover;
+      background-position: 50%;
+      clip-path: ellipse(90% 100% at 52% 0%);
+      position: relative;
+      z-index: 0;
+      @include g.mq(pc) {
+        clip-path: ellipse(120% 100% at 50% 0%);
+      }
+      @include g.mq(tab) {
+        clip-path: ellipse(150% 100% at 50% 0%);
+      }
+      @include g.mq(sp) {
+        clip-path: ellipse(200% 100% at 50% 0%);
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: g.$cBlack-clear-2;
+        z-index: 1;
+      }
+      &__ttl {
+        position: absolute;
+        bottom: 15%;
+        left: 15%;
+        z-index: 2;
+        @include g.mq(tab) {
+          bottom: 10%;
+          left: 10%;
+        }
+        @include g.mq(sp) {
+          left: 8%;
+        }
+        & h2 {
+          font-size: g.$font-20-48;
+          color: g.$cWhite;
+          line-height: 1.4;
+          & span {
+            border-bottom: 2px solid g.$cWhite;
+            padding-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  &-wrap {
+    &__block {
+      &__top {
+        background-color: g.$cBrand;
+        box-sizing: border-box;
+        padding: 7.5% 0 5%;
+        text-align: center;
+        @include g.mq(sp) {
+          padding: 9.5% 0 7.5%;
+        }
+        &.__second {
+          background-color: g.$cWhite;
+          @include g.mq(sp) {
+            margin-top: 40vh;
+          }
+        }
+        & h2 {
+          font-size: g.$font-20-40;
+          color: g.$cWhite;
+          &.__second {
+            color: g.$cBlack;
+          }
+        }
+        & p {
+          font-size: g.$font-10-16;
+          color: g.$cWhite;
+          line-height: 1.6;
+          margin-top: 2.5%;
+          font-weight: 500;
+          display: inline-block;
+          text-align: left;
+          margin-left: 10%;
+          margin-right: 10%;
+          @include g.mq(sp) {
+            margin-top: 4.5%;
+          }
+          &.__second {
+            color: g.$cBlack;
+          }
+        }
+      }
+      &__bottom {
+        display: flex;
+        align-items: center;
+        height: 30dvh;
+        @include g.mq(sp) {
+          display: block;
+          height: 40dvh;
+        }
+        &__left {
+          width: 50%;
+          height: 100%;
+          @include g.mq(sp) {
+            width: 100%;
+          }
+          &__img {
+            background-image: url(../img/top-service-1.jpeg);
+            background-position: 50%;
+            background-size: cover;
+            height: 100%;
+            position: relative;
+            z-index: 0;
+            &.__second {
+              background-image: url(../img/top-company.jpeg);
+            }
+            &::after {
+              position: absolute;
+              content: "";
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background-color: g.$cBlack-clear-3;
+              z-index: 1;
+            }
+            &__txt {
+              position: absolute;
+              z-index: 2;
+              left: 3.5%;
+              bottom: 5%;
+              display: flex;
+              align-items: flex-end;
+              gap: 2.5%;
+              & p {
+                color: g.$cWhite;
+                border-bottom: 1px solid g.$cWhite;
+                padding-bottom: 7px;
+                // font-size: g.$font-12-20;
+                font-size: g.$font-8-20__top;
+                white-space: nowrap;
+                @include g.mq(sp) {
+                  font-size: 12px;
+                }
+              }
+            }
+            &__btn {
+              position: absolute;
+              z-index: 2;
+              right: 15%;
+              bottom: 7.5%;
+            }
+          }
+        }
+        &__line {
+          height: 100%;
+          width: 1px;
+          @include g.mq(sp) {
+            display: none;
+          }
+        }
+        &__right {
+          width: 50%;
+          height: 100%;
+          @include g.mq(sp) {
+            width: 100%;
+          }
+          &__img {
+            background-image: url(../img/top-service-2.jpeg);
+            background-position: 50%;
+            background-size: cover;
+            height: 100%;
+            position: relative;
+            z-index: 0;
+            &.__second {
+              background-image: url(../img/top-greet.jpeg);
+            }
+            &::after {
+              position: absolute;
+              content: "";
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background-color: g.$cBlack-clear-3;
+              z-index: 1;
+            }
+            &__txt {
+              position: absolute;
+              z-index: 2;
+              right: 3.5%;
+              bottom: 5%;
+              display: flex;
+              align-items: flex-end;
+              gap: 2.5%;
+
+              & p {
+                color: g.$cWhite;
+                border-bottom: 1px solid g.$cWhite;
+                padding-bottom: 7px;
+                // font-size: g.$font-12-20;
+                font-size: g.$font-8-20__top;
+                white-space: nowrap;
+                @include g.mq(sp) {
+                  font-size: 12px;
+                }
+              }
+            }
+            &__btn {
+              position: absolute;
+              z-index: 2;
+              right: 15%;
+              bottom: 7.5%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.blog {
+  @include g.mq(tab) {
+    margin: 12.5% 0;
+  }
+  @include g.mq(sp) {
+    margin-top: 47vh;
+  }
+
+  &-wrap {
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__btn {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 2.5%;
+        width: 40%;
+        @include g.mq(sp) {
+          width: 42%;
+        }
+        & p {
+          color: g.$cBlack;
+          font-size: g.$font-11-20;
+          margin-bottom: 1%;
+        }
+      }
+    }
+    &__bottom {
+      display: flex;
+      margin: 5% 0;
+      gap: 5%;
+      @include g.mq(sp) {
+        margin: 12% 0;
+      }
+      &__block {
+        width: 30%;
+        @include g.mq(tab) {
+          width: 48%;
+        }
+        @include g.mq(sp) {
+          width: 100%;
+        }
+        &.__third {
+          @include g.mq(tab) {
+            display: none;
+          }
+        }
+        &.__second {
+          @include g.mq(sp) {
+            display: none;
+          }
+        }
+        &__img {
+          width: 100%;
+          aspect-ratio: 3 / 2;
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &__txt {
+          & p {
+            margin: 5% 0;
+            // font-size: g.$font-14-20;
+            font-size: g.$font-14-20__top;
+            color: g.$cBlack;
+          }
+        }
+      }
+    }
+  }
+}
+
+.news {
+  @include g.mq(tab) {
+    margin: 12.5% 0;
+  }
+  @include g.mq(sp) {
+    margin: 17.5% 0;
+  }
+
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    @include g.mq(sp) {
+      display: block;
+    }
+    &__top {
+      width: 30%;
+      @include g.mq(tab) {
+        width: 33%;
+      }
+      @include g.mq(sp) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      &__btn {
+        display: flex;
+        align-items: flex-end;
+        gap: 2.5%;
+        width: 100%;
+        margin: 12% 0;
+        @include g.mq(tab) {
+          margin: 20% 0;
+        }
+        @include g.mq(sp) {
+          margin: 0 0 7.5%;
+          justify-content: flex-end;
+        }
+        & p {
+          color: g.$cBlack;
+          font-size: g.$font-11-20;
+          margin-bottom: 1%;
+        }
+      }
+      &__ttl {
+        width: 63%;
+        @include g.mq(tab) {
+          width: 70%;
+        }
+      }
+    }
+    &__bottom {
+      width: 65%;
+      @include g.mq(tab) {
+        width: 62%;
+      }
+      @include g.mq(sp) {
+        width: 100%;
+      }
+      &__list {
+        &__item {
+          margin: 1.25em;
+          & span {
+            font-size: g.$font-11-16;
+            color: g.$cBlack;
+            margin-right: 5%;
+            @include g.mq(sp) {
+              margin-right: 10%;
+            }
+          }
+        }
+        & hr {
+          border-top: 1px dashed g.$cBlack;
+        }
+      }
+    }
+  }
+}
