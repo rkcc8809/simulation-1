@@ -18,6 +18,8 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -68,11 +70,14 @@ li {
   margin: 2.5% 0;
 }
 .c-con-wrap__form__block__input.__radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 @media screen and (max-width: 1024px) {
   .c-con-wrap__form__block__input.__radio {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 .c-con-wrap__form__block__input__one {
@@ -100,7 +105,9 @@ li {
   vertical-align: text-bottom;
   font-family: "Noto Serif JP", serif;
   font-weight: 700;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #eee;
   width: 20px; /* 任意の幅 */
   height: 20px; /* 任意の高さ */
@@ -125,7 +132,9 @@ li {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 768px) {
   .c-con-wrap__form__block__input__one input:checked::before {
@@ -139,7 +148,8 @@ li {
   padding-left: 2.5%;
 }
 .c-con-wrap__form__block__input__two input {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
   width: 100%;
   font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
@@ -153,7 +163,8 @@ li {
 .c-con-wrap__form__block__input__two__textarea {
   display: block;
   width: 100%;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-size: clamp(0.625rem, 0.518rem + 0.54vw, 1rem);
   padding: 2% 4%;
   font-family: "Noto Serif JP", serif;
@@ -175,6 +186,8 @@ li {
   color: #fff;
   font-size: clamp(0.75rem, 0.679rem + 0.36vw, 1rem);
   padding: 2% 10%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 @media screen and (max-width: 480px) {

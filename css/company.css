@@ -17,6 +17,8 @@ body {
 a {
   text-decoration: none;
   color: #000;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -47,9 +49,11 @@ li {
 .c-philo-wrap__top {
   background-color: #fff;
   display: inline-block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 2% 8.5% 2% 5%;
-  clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 0% 100%);
 }
 @media screen and (max-width: 768px) {
   .c-philo-wrap__top {
@@ -75,7 +79,8 @@ li {
 }
 .c-philo-wrap__middle__left {
   width: 60%;
-  clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 60% 0%, 100% 100%, 0% 100%);
   aspect-ratio: 16/9;
 }
 .c-philo-wrap__middle__left img {
@@ -89,7 +94,8 @@ li {
   aspect-ratio: 16/9;
   top: 0;
   right: 0;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 40% 100%);
 }
 .c-philo-wrap__middle__right img {
   width: 100%;
@@ -97,14 +103,18 @@ li {
   display: block;
 }
 .c-philo-wrap__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .c-philo-wrap__bottom__clip {
   background-color: #fff;
   display: inline-block;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 2% 2% 2% 9.5%;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 10% 100%);
   margin-left: auto;
 }
 @media screen and (max-width: 768px) {
@@ -157,9 +167,9 @@ li {
   content: "";
   display: block;
   position: absolute;
-  bottom: -16px;
+  bottom: -8px;
   width: 100%;
-  height: 10px;
+  height: 2px;
   background-color: #28b19c;
 }
 .c-intro-wrap__block__ttl.__second h2::after {
@@ -167,14 +177,24 @@ li {
 }
 .c-intro-wrap__block hr {
   border-top: 1px solid #28b19c;
+  margin: 0.5em 0;
 }
 .c-intro-wrap__block.__second hr {
   border-top: 1px solid #555;
 }
+.c-intro-wrap__block.__second hr.__dashed {
+  border-top: 1px dashed #555;
+}
 .c-intro-wrap__block__con {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 5% auto;
 }
 @media screen and (max-width: 768px) {
@@ -188,13 +208,22 @@ li {
   }
 }
 .c-intro-wrap__block__con.__second {
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .c-intro-wrap__block__con__left {
   width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  order: -1;
-  flex-direction: column;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 20px;
 }
 @media screen and (max-width: 480px) {
@@ -219,7 +248,8 @@ li {
 .c-intro-wrap__block__con__left__img img {
   width: 100%;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .c-intro-wrap__block__con__left.__second {
   width: 40%;
@@ -249,7 +279,8 @@ li {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .c-intro-wrap__block__con__right__list {
   width: 100%;
@@ -260,6 +291,8 @@ li {
   }
 }
 .c-intro-wrap__block__con__right__list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 1.5em 0;
 }
@@ -268,7 +301,12 @@ li {
 }
 @media screen and (max-width: 768px) {
   .c-intro-wrap__block__con__right__list__item {
-    margin: 0.5em 0;
+    margin: 1em 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .c-intro-wrap__block__con__right__list__item {
+    margin: 1em 0;
   }
 }
 .c-intro-wrap__block__con__right__list__item__ttl {

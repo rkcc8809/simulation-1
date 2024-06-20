@@ -115,9 +115,9 @@
             content: "";
             display: block;
             position: absolute;
-            bottom: -16px;
+            bottom: -8px;
             width: 100%;
-            height: 10px;
+            height: 2px;
             background-color: g.$cBrand;
           }
         }
@@ -131,10 +131,14 @@
       }
       & hr {
         border-top: 1px solid g.$cBrand;
+        margin: 0.5em 0;
       }
       &.__second {
         & hr {
           border-top: 1px solid g.$cGray;
+          &.__dashed {
+            border-top: 1px dashed g.$cGray;
+          }
         }
       }
       &__con {
@@ -218,7 +222,10 @@
                 margin-top: 0;
               }
               @include g.mq(tab) {
-                margin: 0.5em 0;
+                margin: 1em 0;
+              }
+              @include g.mq(sp) {
+                margin: 1em 0;
               }
               &__ttl {
                 width: 30%;

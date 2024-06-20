@@ -203,37 +203,124 @@
           }
 
           &__contact {
-            & a {
-              background-color: g.$cWhite;
-              color: g.$cBrand;
-              display: flex;
-              flex-direction: column;
-              font-size: 1rem;
-              gap: 5px;
-              width: 100%;
-              padding: 7.5% 25%;
-              margin-right: 2.5%;
-              @include g.mq(pc) {
-                font-size: 0.875rem;
-              }
-              &:hover {
-                opacity: 1;
-                background-color: g.$cYellow;
-                color: g.$cWhite;
-              }
-              & span {
-                text-align: center;
-                & svg {
-                  width: 1.5em;
-                  height: 1.5em;
-                }
-              }
-            }
+            // & .def-btn {
+            //   background-color: g.$cWhite;
+            //   color: g.$cBrand;
+            //   display: flex;
+            //   flex-direction: column;
+            //   font-size: 1rem;
+            //   gap: 5px;
+            //   width: 100%;
+            //   padding: 7.5% 25%;
+            //   margin-right: 2.5%;
+            //   position: relative;
+            //   overflow: hidden;
+            //   @include g.mq(pc) {
+            //     font-size: 0.875rem;
+            //   }
+            //   // &:hover {
+            //   //   opacity: 1;
+            //   //   background-color: g.$cYellow;
+            //   //   color: g.$cWhite;
+            //   // }
+            //   & span {
+            //     text-align: center;
+            //     position: relative;
+            //     z-index: 3;
+            //     & svg {
+            //       width: 1.5em;
+            //       height: 1.5em;
+            //     }
+            //   }
+            //   & p {
+            //     position: relative;
+            //     z-index: 3;
+            //   }
+            // }
+            // & .def-btn:hover {
+            //   // transition: ;
+            //   opacity: 1;
+            //   // background-color: g.$cYellow;
+            //   color: g.$cWhite;
+            // }
+            // & .bgleft::before {
+            //   position: absolute;
+            //   content: "";
+            //   top: 0;
+            //   left: 0;
+            //   width: 100%;
+            //   height: 100%;
+            //   background-color: g.$cYellow;
+            //   transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+            //   transform: scale(0, 1);
+            //   transform-origin: right top;
+            // }
+            // & .bgleft:hover::before {
+            //   transform-origin: left top;
+            //   transform: scale(1, 1);
+            // }
           }
         }
       }
     }
   }
+}
+
+.def-btn {
+  background-color: g.$cWhite;
+  color: g.$cBrand;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  gap: 5px;
+  width: 100%;
+  padding: 7.5% 25%;
+  margin-right: 2.5%;
+  position: relative;
+  overflow: hidden;
+  @include g.mq(pc) {
+    font-size: 0.875rem;
+  }
+  // &:hover {
+  //   opacity: 1;
+  //   background-color: g.$cYellow;
+  //   color: g.$cWhite;
+  // }
+  & span {
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    & svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+  }
+  & p {
+    position: relative;
+    z-index: 3;
+  }
+}
+.def-btn:hover {
+  // transition: ;
+  opacity: 1;
+  // background-color: g.$cYellow;
+  color: g.$cWhite;
+}
+.bgleft::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: g.$cYellow;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+}
+.bgleft:hover::before {
+  transform-origin: left top;
+  transform: scale(1, 1);
 }
 
 .h-open {
@@ -355,11 +442,11 @@
     }
 
     & li {
-      & a {
-        background-color: g.$cWhite;
-        color: g.$cBrand;
-        display: flex;
-        flex-direction: column;
+      & .def-btn {
+        // background-color: g.$cWhite;
+        // color: g.$cBrand;
+        // display: flex;
+        // flex-direction: column;
         font-size: 1rem;
         gap: 5px;
         width: 100%;
@@ -368,18 +455,18 @@
         @include g.mq(pc) {
           font-size: 0.875rem;
         }
-        &:hover {
-          opacity: 1;
-          background-color: g.$cYellow;
-          color: g.$cWhite;
-        }
-        & span {
-          text-align: center;
-          & svg {
-            width: 1.5em;
-            height: 1.5em;
-          }
-        }
+        // &:hover {
+        //   opacity: 1;
+        //   background-color: g.$cYellow;
+        //   color: g.$cWhite;
+        // }
+        // & span {
+        //   text-align: center;
+        //   & svg {
+        //     width: 1.5em;
+        //     height: 1.5em;
+        //   }
+        // }
       }
     }
   }
@@ -424,6 +511,9 @@
     padding: 10% 0 5%;
   }
   &-wrap {
+    @include g.mq(sp) {
+      width: 85%;
+    }
     &__top {
       display: flex;
       justify-content: space-between;
@@ -435,16 +525,16 @@
         }
       }
       &__contact {
-        & a {
-          color: g.$cBrand;
+        & .def-btn {
+          // color: g.$cBrand;
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 5px;
-          width: 18vw;
+          width: 180px;
           padding: 5% 18%;
           box-sizing: border-box;
-          background-color: g.$cWhite;
+          // background-color: g.$cWhite;
           white-space: nowrap;
           @include g.mq(pc) {
             width: 20vw;
@@ -454,12 +544,13 @@
           }
           @include g.mq(sp) {
             width: 30vw;
+            // padding: 7.5% 22%;
           }
-          &:hover {
-            opacity: 1;
-            color: g.$cWhite;
-            background-color: g.$cYellow;
-          }
+          // &:hover {
+          //   opacity: 1;
+          //   color: g.$cWhite;
+          //   background-color: g.$cYellow;
+          // }
           & span {
             & svg {
               width: 2em;
@@ -469,25 +560,26 @@
                 height: 1.5em;
               }
               @include g.mq(sp) {
-                width: 1em;
-                height: 1em;
+                width: 1.2em;
+                height: 1.2em;
               }
             }
           }
           & p {
-            font-size: g.$font-12-24;
+            font-size: g.$font-12-16;
           }
         }
       }
     }
     &__bottom {
       display: flex;
-      margin: -2.5% 0 0;
+      margin: -0.5% 0 0;
       @include g.mq(tab) {
         margin: 5% 0 0;
       }
       @include g.mq(sp) {
         flex-wrap: wrap;
+        // justify-content: space-evenly;
       }
       &__list {
         width: 22.5%;
@@ -498,7 +590,7 @@
           width: 35.5%;
         }
         @include g.mq(sp) {
-          width: 60%;
+          width: 65%;
         }
         &.__second {
           width: 20%;
@@ -506,7 +598,8 @@
             width: 25%;
           }
           @include g.mq(sp) {
-            width: 27%;
+            width: 29%;
+            margin-top: 17.5%;
           }
         }
         &.__third {
@@ -515,13 +608,13 @@
             width: 20%;
           }
           @include g.mq(sp) {
-            width: 30%;
+            width: 65%;
           }
         }
         &.__fourth {
           width: 15%;
           @include g.mq(sp) {
-            width: 30%;
+            width: 23%;
           }
         }
         & a {
@@ -530,13 +623,19 @@
         &__item {
           margin-bottom: 20%;
           & a {
-            font-size: g.$font-12-24;
+            font-size: g.$font-12-16;
           }
           &__sub {
             &__item {
               margin: 5% 0 0;
               &:nth-of-type(1) {
                 margin-top: 10%;
+              }
+              @include g.mq(sp) {
+                margin-top: 1vh;
+                &:nth-of-type(1) {
+                  margin-top: 1.5vh;
+                }
               }
               & a {
                 font-size: g.$font-10-14;
@@ -557,6 +656,9 @@
         cursor: pointer;
         gap: 2%;
         margin-top: -10%;
+        @include g.mq(sp) {
+          margin-top: 0;
+        }
         & p {
           font-size: g.$font-11-16;
           color: g.$cWhite;
