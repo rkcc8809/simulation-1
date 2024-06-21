@@ -15,7 +15,13 @@
 
     &__block {
       margin: 5% 0;
-      box-shadow: 0px 4px 4px g.$cBlack-clear;
+
+      transition: all 0.4s;
+      position: relative;
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 4px g.$cBlack-clear;
+      }
       @include g.mq(sp) {
         margin: 7.5% 0;
       }
@@ -68,6 +74,9 @@
             font-size: g.$font-12-20;
             width: 2.5em;
             height: 2.5em;
+            &:hover {
+              opacity: 0.7;
+            }
             &.__now {
               cursor: default;
               pointer-events: none;

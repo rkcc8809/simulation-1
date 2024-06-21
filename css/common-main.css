@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 100%;
   scroll-behavior: smooth;
@@ -20,10 +21,6 @@ a {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-
-a:hover {
-  opacity: 0.7;
 }
 
 li {
@@ -151,6 +148,11 @@ li {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  -o-transition: transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 @media screen and (max-width: 1024px) {
   .btn svg {
@@ -205,7 +207,6 @@ li {
   }
 }
 .header-wrap__logo {
-  font-size: 1.25rem;
   padding-left: 2.5%;
 }
 @media screen and (max-width: 768px) {
@@ -213,10 +214,23 @@ li {
     padding-left: 3.5%;
   }
 }
-.header-wrap__logo a {
+.header-wrap__logo a h1 {
+  font-size: 1.25rem;
   color: #fff;
   font-family: "Kaisei Decol", serif;
   font-weight: 700;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.header-wrap__logo a h1:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
 }
 .header-wrap__nav {
   width: 55%;
@@ -250,6 +264,30 @@ li {
   font-weight: 700;
   display: block;
   color: #fff;
+  position: relative;
+}
+.header-wrap__nav__list__item a::after {
+  position: absolute;
+  content: "";
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: #fff;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.header-wrap__nav__list__item a:hover::after {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 @media screen and (max-width: 1024px) {
   .header-wrap__nav__list__item a {
@@ -411,6 +449,18 @@ li {
   color: #fff;
   font-size: 20px;
   display: block;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+#h-nav__list__first li a:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
 }
 @media screen and (max-width: 480px) {
   #h-nav__list__first li a {
@@ -427,10 +477,33 @@ li {
   margin: 50% 0;
 }
 #h-nav__list__second li a {
-  display: block;
+  display: inline-block;
   font-size: 20px;
   color: #fff;
   position: relative;
+}
+#h-nav__list__second li a::after {
+  position: absolute;
+  content: "";
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: #fff;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#h-nav__list__second li a:hover::after {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 @media screen and (max-width: 480px) {
   #h-nav__list__second li a {
@@ -530,8 +603,20 @@ li {
 .footer-wrap__top__logo a {
   color: #fff;
   font-size: clamp(1rem, 0.857rem + 0.71vw, 1.5rem);
+  display: inline-block;
   font-family: "Kaisei Decol", serif;
   font-weight: 700;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.footer-wrap__top__logo a:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .footer-wrap__top__contact .def-btn {
   display: -webkit-box;
@@ -664,6 +749,33 @@ li {
 .footer-wrap__bottom__list__item a {
   font-size: clamp(0.75rem, 0.679rem + 0.36vw, 1rem);
 }
+.footer-wrap__bottom__list__item > a {
+  position: relative;
+}
+.footer-wrap__bottom__list__item > a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background: #fff;
+  /* アニメーションの指定 */
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  -webkit-transform: scale(0, 1);
+      -ms-transform: scale(0, 1);
+          transform: scale(0, 1); /* X方向0、Y方向1 */
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top; /* 上部中央基点 */
+}
+.footer-wrap__bottom__list__item > a:hover::after {
+  -webkit-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
 .footer-wrap__bottom__list__item__sub__item {
   margin: 5% 0 0;
 }
@@ -681,8 +793,19 @@ li {
 .footer-wrap__bottom__list__item__sub__item a {
   font-size: clamp(0.625rem, 0.554rem + 0.36vw, 0.875rem);
 }
+.footer-wrap__bottom__list__item__sub__item a:hover {
+  opacity: 0.7;
+}
 .footer-wrap__bottom__list__item__sub__item a::before {
   content: ">";
+}
+.footer-wrap__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .footer-wrap__btn__txt {
   display: -webkit-box;
@@ -695,8 +818,13 @@ li {
       -ms-flex-align: end;
           align-items: flex-end;
   cursor: pointer;
-  gap: 2%;
+  gap: 10px;
   margin-top: -10%;
+}
+.footer-wrap__btn__txt:hover svg {
+  -webkit-transform: translateY(-20%);
+      -ms-transform: translateY(-20%);
+          transform: translateY(-20%);
 }
 @media screen and (max-width: 480px) {
   .footer-wrap__btn__txt {
@@ -715,4 +843,175 @@ li {
 .footer-wrap__copyright small {
   color: #fff;
   font-size: clamp(0.625rem, 0.589rem + 0.18vw, 0.75rem);
+}
+
+/* フェードアップのスタイル */
+.fadeUp {
+  -webkit-animation: fadeUpAnime 0.8s forwards;
+          animation: fadeUpAnime 0.8s forwards; /* fadeUpAnimeを0.8秒で一回実行 */
+  opacity: 0;
+}
+
+/* フェードレフトのスタイル */
+.fadeLeft {
+  -webkit-animation: fadeLeftAnime 0.8s forwards;
+          animation: fadeLeftAnime 0.8s forwards; /* fadeLeftAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+.fadeRight_2 {
+  -webkit-animation: fadeRightAnime2 0.8s forwards;
+          animation: fadeRightAnime2 0.8s forwards; /* fadeLeftAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* フェードライトのスタイル */
+.fadeRight {
+  -webkit-animation: fadeRightAnime 0.8s forwards;
+          animation: fadeRightAnime 0.8s forwards; /* fadeRightAnimeを0.8秒で一回実行 */
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* トリガーアニメーションのスタイル */
+.fadeUpTrigger,
+.fadeLeftTrigger,
+.fadeRightTrigger,
+.fadeRightTrigger2 {
+  opacity: 0; /* 最初は非表示 */
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0; /* 最初は非表示 */
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px); /* 100px下に動かす */
+  }
+  to {
+    opacity: 1; /* 可視化する */
+    -webkit-transform: translateY(0);
+            transform: translateY(0); /* 元の位置に戻す */
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0; /* 最初は非表示 */
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px); /* 100px下に動かす */
+  }
+  to {
+    opacity: 1; /* 可視化する */
+    -webkit-transform: translateY(0);
+            transform: translateY(0); /* 元の位置に戻す */
+  }
+}
+@-webkit-keyframes fadeLeftAnime {
+  from {
+    opacity: 0; /* 最初は非表示 */
+    -webkit-transform: translateX(15px);
+            transform: translateX(15px); /* 100px右に動かす */
+  }
+  to {
+    opacity: 1; /* 可視化する */
+    -webkit-transform: translateX(0);
+            transform: translateX(0); /* 元の位置に戻す */
+  }
+}
+@keyframes fadeLeftAnime {
+  from {
+    opacity: 0; /* 最初は非表示 */
+    -webkit-transform: translateX(15px);
+            transform: translateX(15px); /* 100px右に動かす */
+  }
+  to {
+    opacity: 1; /* 可視化する */
+    -webkit-transform: translateX(0);
+            transform: translateX(0); /* 元の位置に戻す */
+  }
+}
+@-webkit-keyframes fadeRightAnime2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@keyframes fadeRightAnime2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-70%);
+            transform: translateX(-70%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+@-webkit-keyframes fadeRightAnime {
+  from {
+    opacity: 0; /* 最初は非表示 */
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px); /* 100px左に動かす */
+  }
+  to {
+    opacity: 1; /* 可視化する */
+    -webkit-transform: translateX(0);
+            transform: translateX(0); /* 元の位置に戻す */
+  }
+}
+@keyframes fadeRightAnime {
+  from {
+    opacity: 0; /* 最初は非表示 */
+    -webkit-transform: translateX(-15px);
+            transform: translateX(-15px); /* 100px左に動かす */
+  }
+  to {
+    opacity: 1; /* 可視化する */
+    -webkit-transform: translateX(0);
+            transform: translateX(0); /* 元の位置に戻す */
+  }
+}
+.fadeRotate {
+  -webkit-animation: fadeRotateAnime 0.8s forwards;
+          animation: fadeRotateAnime 0.8s forwards; /* fadeUpAnimeを0.8秒で一回実行 */
+  opacity: 0;
+}
+
+.fadeRotateTrigger {
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeRotateAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes fadeRotateAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
 }

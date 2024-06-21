@@ -15,17 +15,21 @@
       background-image: url("../img/top-fv.jpg");
       background-size: cover;
       background-position: 50%;
-      clip-path: ellipse(90% 100% at 52% 0%);
+      clip-path: ellipse(100% 100% at 50% 0%);
       position: relative;
       z-index: 0;
+      animation: ellipseAnime 10s infinite alternate ease-in-out;
       @include g.mq(pc) {
         clip-path: ellipse(120% 100% at 50% 0%);
+        animation: ellipseAnime-pc 10s infinite alternate ease-in-out;
       }
       @include g.mq(tab) {
         clip-path: ellipse(150% 100% at 50% 0%);
+        animation: ellipseAnime-tab 10s infinite alternate ease-in-out;
       }
       @include g.mq(sp) {
         clip-path: ellipse(200% 100% at 50% 0%);
+        animation: ellipseAnime-sp 10s infinite alternate ease-in-out;
       }
       &::after {
         position: absolute;
@@ -60,6 +64,66 @@
         }
       }
     }
+  }
+}
+
+@keyframes ellipseAnime {
+  0% {
+    clip-path: ellipse(100% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+  50% {
+    clip-path: ellipse(100% 100% at 55% 0%);
+    background-position: 80% 100%;
+  }
+  100% {
+    clip-path: ellipse(100% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes ellipseAnime-pc {
+  0% {
+    clip-path: ellipse(120% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+  50% {
+    clip-path: ellipse(125% 100% at 60% 0%);
+    background-position: 60% 50%;
+  }
+  100% {
+    clip-path: ellipse(120% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes ellipseAnime-tab {
+  0% {
+    clip-path: ellipse(150% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+  50% {
+    clip-path: ellipse(155% 100% at 65% 0%);
+    background-position: 60% 50%;
+  }
+  100% {
+    clip-path: ellipse(150% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+}
+
+@keyframes ellipseAnime-sp {
+  0% {
+    clip-path: ellipse(200% 100% at 50% 0%);
+    background-position: 50% 50%;
+  }
+  50% {
+    clip-path: ellipse(205% 100% at 80% 0%);
+    background-position: 60% 50%;
+  }
+  100% {
+    clip-path: ellipse(200% 100% at 50% 0%);
+    background-position: 50% 50%;
   }
 }
 
@@ -126,6 +190,8 @@
             height: 100%;
             position: relative;
             z-index: 0;
+            transition: all 0.4s;
+            transform: scale(1);
             &.__second {
               background-image: url(../img/top-company.jpeg);
             }
@@ -147,6 +213,14 @@
               display: flex;
               align-items: flex-end;
               gap: 2.5%;
+              transition: all 0.4s;
+
+              &:hover {
+                & svg {
+                  transition: all 0.4s;
+                  transform: rotate(45deg);
+                }
+              }
               & p {
                 color: g.$cWhite;
                 border-bottom: 1px solid g.$cWhite;
@@ -187,6 +261,7 @@
             height: 100%;
             position: relative;
             z-index: 0;
+            transition: all 0.4s;
             &.__second {
               background-image: url(../img/top-greet.jpeg);
             }
@@ -208,6 +283,13 @@
               display: flex;
               align-items: flex-end;
               gap: 2.5%;
+              transition: all 0.4s;
+              &:hover {
+                & svg {
+                  transition: all 0.4s;
+                  transform: rotate(45deg);
+                }
+              }
 
               & p {
                 color: g.$cWhite;
@@ -249,18 +331,45 @@
       align-items: center;
 
       &__btn {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
-        gap: 2.5%;
-        width: 40%;
-        @include g.mq(sp) {
-          width: 42%;
-        }
-        & p {
-          color: g.$cBlack;
-          font-size: g.$font-11-20;
-          margin-bottom: 1%;
+        & a {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          gap: 10px;
+          transition: all 0.4s;
+
+          &:hover {
+            & svg {
+              transition: all 0.4s;
+              transform: rotate(45deg);
+            }
+            & p::after {
+              transform: scale(1, 1);
+            }
+          }
+          @include g.mq(tab) {
+            gap: 5px;
+          }
+
+          & p {
+            color: g.$cBlack;
+            font-size: g.$font-11-20;
+            margin-bottom: 1%;
+            position: relative;
+            transition: all 0.4s;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 100%;
+              background-color: g.$cGray;
+              left: 0;
+              bottom: -10px;
+              height: 2.5px;
+              transition: all 0.3s;
+              transform: scale(0, 1);
+              transform-origin: left top;
+            }
+          }
         }
       }
     }
@@ -295,6 +404,12 @@
           & img {
             width: 100%;
             height: 100%;
+            transition: all 0.4s;
+            transform: scale(1);
+
+            &:hover {
+              transform: scale(0.95);
+            }
           }
         }
         &__txt {
@@ -335,28 +450,57 @@
         justify-content: space-between;
       }
       &__btn {
-        display: flex;
-        align-items: flex-end;
-        gap: 2.5%;
-        width: 100%;
-        margin: 12% 0;
-        @include g.mq(tab) {
-          margin: 20% 0;
+        display: inline-block;
+        & a {
+          display: flex;
+          align-items: flex-end;
+          gap: 10px;
+          // width: 100%;
+          margin: 12% 0;
+          transition: all 0.4s;
+
+          &:hover {
+            & svg {
+              transition: all 0.4s;
+              transform: rotate(45deg);
+            }
+            & p::after {
+              transform: scale(1, 1);
+            }
+          }
+          @include g.mq(tab) {
+            margin: 20% 0;
+            gap: 5px;
+          }
+          @include g.mq(sp) {
+            margin: 0 0 7.5%;
+            justify-content: flex-end;
+          }
+          & p {
+            color: g.$cBlack;
+            font-size: g.$font-11-20;
+            margin-bottom: 1%;
+            position: relative;
+            transition: all 0.4s;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 100%;
+              background-color: g.$cGray;
+              left: 0;
+              bottom: -10px;
+              height: 2.5px;
+              transition: all 0.3s;
+              transform: scale(0, 1);
+              transform-origin: left top;
+            }
+          }
         }
-        @include g.mq(sp) {
-          margin: 0 0 7.5%;
-          justify-content: flex-end;
-        }
-        & p {
-          color: g.$cBlack;
-          font-size: g.$font-11-20;
-          margin-bottom: 1%;
-        }
-      }
-      &__ttl {
-        width: 63%;
-        @include g.mq(tab) {
-          width: 70%;
+        &__ttl {
+          width: 63%;
+          @include g.mq(tab) {
+            width: 70%;
+          }
         }
       }
     }
@@ -371,12 +515,17 @@
       &__list {
         &__item {
           margin: 1.25em;
-          & span {
-            font-size: g.$font-11-16;
-            color: g.$cBlack;
-            margin-right: 5%;
-            @include g.mq(sp) {
-              margin-right: 10%;
+          & a {
+            &:hover {
+              opacity: 0.7;
+            }
+            & span {
+              font-size: g.$font-11-16;
+              color: g.$cBlack;
+              margin-right: 5%;
+              @include g.mq(sp) {
+                margin-right: 10%;
+              }
             }
           }
         }

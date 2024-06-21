@@ -22,10 +22,6 @@ a {
   transition: all 0.3s;
 }
 
-a:hover {
-  opacity: 0.7;
-}
-
 li {
   list-style: none;
 }
@@ -42,6 +38,17 @@ li {
 }
 .b-article-wrap__block {
   margin: 5% 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.b-article-wrap__block:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
 }
 @media screen and (max-width: 480px) {
   .b-article-wrap__block {
@@ -130,6 +137,9 @@ li {
           justify-content: center;
   width: 100%;
   gap: 5%;
+}
+.b-article-wrap__btn__list__item a:hover {
+  opacity: 0.7;
 }
 .b-article-wrap__btn__list__item__link {
   display: -webkit-box;

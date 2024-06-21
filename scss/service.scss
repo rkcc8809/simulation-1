@@ -200,14 +200,22 @@
       }
       &__btn {
         padding-bottom: 3.5%;
+        text-align: right;
+        width: 95%;
         &__inner {
           width: 90%;
           margin: 0 auto;
-          display: flex;
-          align-items: flex-end;
-          justify-content: flex-end;
+
           margin-top: -2.5%;
           gap: 1%;
+          transition: all 0.4s;
+
+          &:hover {
+            & svg {
+              transition: all 0.4s;
+              transform: rotate(45deg);
+            }
+          }
           @include g.mq(sp) {
             margin-bottom: 2.5%;
           }
@@ -216,6 +224,7 @@
             padding-bottom: 7px;
             color: g.$cBrand;
             font-size: g.$font-12-20;
+            display: inline-block;
           }
         }
       }

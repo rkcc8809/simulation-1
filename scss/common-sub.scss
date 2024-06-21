@@ -70,6 +70,9 @@
         &__item {
           & a {
             font-size: g.$font-10-16;
+            &:hover {
+              opacity: 0.7;
+            }
           }
           &:not(:last-of-type):after {
             content: ">";
@@ -171,6 +174,9 @@
         align-items: center;
         justify-content: flex-end;
         gap: 5%;
+        &:hover {
+          opacity: 0.7;
+        }
 
         &.__second {
           justify-content: flex-start;
@@ -198,6 +204,9 @@
       }
       &__center {
         text-align: center;
+        &:hover {
+          opacity: 0.7;
+        }
         &__txt {
           font-size: g.$font-14-24;
         }
